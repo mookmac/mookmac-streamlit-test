@@ -86,6 +86,7 @@ with st.form('my_form'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')
     else:
         API_KEY=openai_api_key_override
+        os.environ["OPENAI_API_KEY"] = openai_api_key_override
     if submitted and openai_api_key_override.startswith('sk-') and len(text_list)>0:
         with st.spinner('Generating embeddings...'):
             embeddings = OpenAIEmbeddings(chunk_size=1000)
