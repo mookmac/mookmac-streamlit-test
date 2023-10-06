@@ -11,8 +11,8 @@ from langchain.embeddings import OpenAIEmbeddings
 import streamlit as st  
   
 # Replace this with your own OpenAI API key  
-os.environ["OPENAI_API_KEY"] = "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"  
-API_KEY = "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"  
+#os.environ["OPENAI_API_KEY"] = "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"  
+#API_KEY = "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"  
 openai = OpenAIEmbeddings(openai_api_key=API_KEY)
 
 def get_top_similarity_result(similarity_search_inc_score, top_n_results):
