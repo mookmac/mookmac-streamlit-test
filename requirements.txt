@@ -3,3 +3,9 @@ numpy
 pandas
 pydeck
 streamlit
+openai
+langchain
+tiktoken
+pypdf
+faiss-cpu
+PyPDF2
