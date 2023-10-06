@@ -13,7 +13,7 @@ import streamlit as st
 # Replace this with your own OpenAI API key  
 #os.environ["OPENAI_API_KEY"] = "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"  
 #API_KEY = "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"  
-openai = OpenAIEmbeddings(openai_api_key=API_KEY)
+#openai = OpenAIEmbeddings(openai_api_key=API_KEY)
 
 def get_top_similarity_result(similarity_search_inc_score, top_n_results):
     sorted_list = sorted(similarity_search_inc_score, key=lambda x: x[1], reverse=False)         
@@ -84,6 +84,8 @@ with st.form('my_form'):
     submitted = st.form_submit_button('Submit')
     if not openai_api_key_override.startswith('sk-'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')
+    else:
+        API_KEY=openai_api_key_override
     if submitted and openai_api_key_override.startswith('sk-') and len(text_list)>0:
         with st.spinner('Generating embeddings...'):
             embeddings = OpenAIEmbeddings(chunk_size=1000)
